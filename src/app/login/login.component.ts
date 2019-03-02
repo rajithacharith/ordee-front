@@ -9,7 +9,7 @@ import { AuthServiceService } from '../services/auth-service.service';
 })
 export class LoginComponent implements OnInit {
   public user;
-  constructor() { 
+  constructor(private authService:AuthServiceService) { 
     this.user = new loginDTO();
    }
 
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     console.log(this.user.username,this.user.password);
-    AuthServiceService.login(this.user);
+    this.authService.login(this.user);
   }
 
 }

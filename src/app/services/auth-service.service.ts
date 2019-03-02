@@ -6,16 +6,23 @@ import { loginDTO } from '../DTO/loginDTO';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  static http: any;
+  public http: any;
   
 
-  constructor(private http:HttpClient) {
-    this.http = http;
+  constructor(private httpClient:HttpClient) {
+    this.http = httpClient;
   }
 
-  static login(loginDTO:loginDTO){
-    console.log(loginDTO);
-    this.http.post("localhost:8080/api/login",loginDTO).subscribe(res =>{console.log(res),err=>{console.log("Error Occured")}});
+  
 
+  /**
+   * login
+   */
+  public login(user:loginDTO) {
+    console.log(user);
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin', "*")
+    this.http.post("localhost:8080/api/login",user,headers).subscribe(res =>{console.log(res),err=>{console.log("Error Occured")}});
   }
 }
