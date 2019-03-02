@@ -1,4 +1,4 @@
-class registerDTO{
+export class registerDTO{
     private username ;
     private  password ;
     private  name;
@@ -6,9 +6,10 @@ class registerDTO{
     private  userAddress;
     private  email;
     private  userTel;
-    constructor(){
-
-    }
+    
+    constructor(
+        
+        ) {}
 
 
 }

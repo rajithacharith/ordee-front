@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { registerDTO } from '../DTO/registerDTO';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
