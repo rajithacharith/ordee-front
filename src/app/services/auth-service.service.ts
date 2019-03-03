@@ -23,6 +23,6 @@ export class AuthServiceService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Origin', "*")
-    this.http.post("localhost:8080/api/login",user,headers).subscribe(res =>{console.log(res),err=>{console.log("Error Occured")}});
+    this.http.post("api/login",user,headers).subscribe(res =>{console.log(res),err=>{console.log("Error Occured")}});
   }
 }
