@@ -7,13 +7,13 @@ import { loginDTO } from '../DTO/loginDTO';
 })
 export class AuthServiceService {
   public http: any;
-  
+
 
   constructor(private httpClient:HttpClient) {
     this.http = httpClient;
   }
 
-  
+
 
   /**
    * login
@@ -22,7 +22,8 @@ export class AuthServiceService {
     console.log(user);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin', "*")
+    headers.append('Access-Control-Allow-Origin', "*");
+    headers.append('Access-Control-Allow-Credentials','true');
     this.http.post("api/login",user,headers).subscribe(res =>{console.log(res),err=>{console.log("Error Occured")}});
   }
 }
