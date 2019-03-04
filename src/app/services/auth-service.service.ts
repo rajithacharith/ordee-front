@@ -15,9 +15,6 @@ export class AuthServiceService {
 
 
 
-  /**
-   * login
-   */
   public login(user:loginDTO) {
     console.log(user);
     let headers = new Headers();
