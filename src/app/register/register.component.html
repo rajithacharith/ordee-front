@@ -1,1 +1,55 @@
+<div class="card-panel  orange lighten-2 col s12 black-text darken-4-text">
+  <div class="col s2">Register</div>
+  <div class="row">
+      <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="username" type="text" class="validate" [(ngModel)] = "user.username">
+          <label for="icon_prefix">username</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="password" type="password" class="validate"[(ngModel)] = "user.password">
+          <label for="icon_prefix">Password</label>
+      </div>
+  </div>
+  <div class="row">
+      <div class="input-field col s6">
+          <i class="material-icons prefix">person</i>
+          <input id="name" type="text" class="validate" [(ngModel)] = "user.name">
+          <label for="icon_prefix">Name</label>
+        </div>
+       
       
+      <div class="input-field col s6">
+        <select [(ngModel)] = "user.userType">
+          <option value="" disabled selected>User Type</option>
+          <option value="merchant">Merchant</option>
+          <option value="customer">Customer</option>
+        </select>
+      </div>
+
+        
+
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+      <input id="email" type="email" class="validate" [(ngModel)] = "user.email">
+      <label for="email">Email</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+        <i class="material-icons prefix">home</i>
+      <input id="address" type="text" class="validate" [(ngModel)] = "user.address">
+      <label for="address">Address</label>
+    </div>
+    <div class="input-field col s6">
+        <i class="material-icons prefix">contacts</i>
+      <input id="tel" type="text" class="validate" [(ngModel)] = "user.userTel">
+      <label for="tel">Telephone No:</label>
+    </div>
+  </div>
+  <div class="col s2"><button type="submit" class="btn btn-success orange darken-4" (click) = "onSubmit()">Login</button></div>
+</div>

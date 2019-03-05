@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import 'materialize-css';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

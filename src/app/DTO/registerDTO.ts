@@ -3,7 +3,7 @@ export class registerDTO{
     private  password ;
     private  name;
     private  userType;
-    private  userAddress;
+    private  address;
     private  email;
     private  userTel;
     
