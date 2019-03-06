@@ -27,15 +27,34 @@ export class RegisterComponent implements OnInit {
     $(document).ready(function(){
       $('select').formSelect();
     });
+    $(document).ready(function(){
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    }); 
 
-    
+    this.authService.errorMethodCalled$.subscribe(
+      () => {
+        this.popUpError();
+      }
+    );
+    this.authService.registerSuccessfull$.subscribe(
+      () => {
+        this.popUpSuccess();
+      }
+    );
 
-   
   }
 
   onSubmit(){
     console.log(this.user)
     this.authService.register(this.user);
+  }
+
+  popUpError(){
+    $('#modal1').modal('open');
+  }
+  popUpSuccess(){
+    $('#modal2').modal('open');
   }
   
 

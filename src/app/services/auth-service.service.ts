@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { loginDTO } from '../DTO/loginDTO';
 import { registerDTO } from '../DTO/registerDTO'
 import {Router} from '@angular/router'
-import { from, throwError } from 'rxjs';
+import { from, throwError, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +31,7 @@ export class AuthServiceService {
   }
       ,err=>{
         console.log("Error Occured");
-        this.router.navigate(['/register']);
+        
         });
   }
 
@@ -44,10 +44,12 @@ export class AuthServiceService {
     
     this.http.post("http://localhost:8080/api/register",user,headers).subscribe(res =>{
       console.log(res);
+      this.callRegisterSuccess();
     },err =>{
       console.log("Error occured");
       this.handleError(err);
-    });
+
+      });
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -60,9 +62,23 @@ export class AuthServiceService {
       console.error(
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
+        this.callErrorPopUp();
     }
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
   };
+
+  private registerError = new Subject<any>();
+  private registerSuccess = new Subject<any>();
+  // Observable string streams
+  public errorMethodCalled$ = this.registerError.asObservable();
+  public registerSuccessfull$ = this.registerSuccess.asObservable();
+  // Service message commands
+  callErrorPopUp() {
+    this.registerError.next();
+  }
+  callRegisterSuccess(){
+    this.registerSuccess.next();
+  }
 }
