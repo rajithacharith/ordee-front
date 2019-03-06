@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { loginDTO } from '../DTO/loginDTO';
 import { AuthServiceService } from '../services/auth-service.service';
-
+import * as M from "materialize-css/dist/js/materialize";
+declare var $:any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     
-    console.log(this.user.username,this.user.password);
+    //console.log(this.user.username,this.user.password);
+    $(document).ready(function(){
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    }); 
+    this.authService.loginfaild$.subscribe(
+      () => {
+        console.log("2")
+        this.popUpError();
+      }
+    );
   }
 
   onSubmit(){
@@ -23,4 +34,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.user);
   }
 
+  popUpError(){
+    console.log("3");
+    $('#modal1').modal('open');
+  }
 }

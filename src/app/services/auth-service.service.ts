@@ -27,11 +27,12 @@ export class AuthServiceService {
     this.http.post("http://localhost:8080/api/login",user,headers).subscribe(res =>{
         console.log(res);
         localStorage.setItem('user',res);
+        
         this.router.navigate(['/dashboard']);
   }
       ,err=>{
         console.log("Error Occured");
-        
+        this.callLoginFaild();
         });
   }
 
@@ -71,14 +72,20 @@ export class AuthServiceService {
 
   private registerError = new Subject<any>();
   private registerSuccess = new Subject<any>();
+  private loginFaild = new Subject<any>();
   // Observable string streams
   public errorMethodCalled$ = this.registerError.asObservable();
   public registerSuccessfull$ = this.registerSuccess.asObservable();
+  public loginfaild$ = this.loginFaild.asObservable();
   // Service message commands
   callErrorPopUp() {
     this.registerError.next();
   }
   callRegisterSuccess(){
     this.registerSuccess.next();
+  }
+  callLoginFaild(){
+    console.log("1");
+    this.loginFaild.next();
   }
 }
