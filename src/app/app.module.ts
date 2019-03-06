@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import 'materialize-css';
-
+import { DashboadComponent } from './dashboad/dashboad.component';
+import { MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboadComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import 'materialize-css';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
