@@ -10,13 +10,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import 'materialize-css';
 import { DashboadComponent } from './dashboad/dashboad.component';
 import { MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule } from '@angular/material';
+import { UserlistComponent } from './userlist/userlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboadComponent
+    DashboadComponent,
+    UserlistComponent
   ],
   imports: [
     BrowserModule,
