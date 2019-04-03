@@ -1,11 +1,11 @@
 export class registerDTO{
-    private username ;
-    private  password ;
-    private  name;
-    private  userType;
-    private  address;
-    private  email;
-    private  userTel;
+    public username ;
+    public  password ;
+    public  name;
+    public  userType;
+    public  address;
+    public  email;
+    public  userTel;
     
     constructor(
         

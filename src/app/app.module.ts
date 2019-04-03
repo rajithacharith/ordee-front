@@ -11,6 +11,7 @@ import 'materialize-css';
 import { DashboadComponent } from './dashboad/dashboad.component';
 import { MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { UserlistComponent } from './userlist/userlist.component';
+import { AddfooditemsComponent } from './addfooditems/addfooditems.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserlistComponent } from './userlist/userlist.component';
     LoginComponent,
     RegisterComponent,
     DashboadComponent,
-    UserlistComponent
+    UserlistComponent,
+    AddfooditemsComponent
   ],
   imports: [
     BrowserModule,
