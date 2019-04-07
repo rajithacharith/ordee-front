@@ -24,9 +24,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/materialize-css/dist/css/materialize.css"
+              "./node_modules/materialize-css/dist/css/materialize.css",
+              "./node_modules/tabulator-tables/dist/css/tabulator_modern.css",
+              "./node_modules/tabulator-tables/dist/css/semantic-ui/tabulator_semantic-ui.css"
             ],
-            "scripts": ["./node_modules/jquery/dist/jquery.js", "./node_modules/hammerjs/hammer.js","./node_modules/materialize-css/dist/js/materialize.js"],
+            "scripts": ["./node_modules/jquery/dist/jquery.js", "./node_modules/hammerjs/hammer.js","./node_modules/materialize-css/dist/js/materialize.js","./node_modules/tabulator-tables/dist/js/tabulator.js","./node_modules/tabulator-tables/dist/js/tabulator_core.js"],
             "es5BrowserSupport": true
           },
           "configurations": {

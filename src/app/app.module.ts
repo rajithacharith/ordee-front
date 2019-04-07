@@ -12,6 +12,8 @@ import { DashboadComponent } from './dashboad/dashboad.component';
 import { MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { UserlistComponent } from './userlist/userlist.component';
 import { AddfooditemsComponent } from './addfooditems/addfooditems.component';
+import 'tabulator-tables';
+import { ShowfooditemsComponent } from './showfooditems/showfooditems.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { AddfooditemsComponent } from './addfooditems/addfooditems.component';
     RegisterComponent,
     DashboadComponent,
     UserlistComponent,
-    AddfooditemsComponent
+    AddfooditemsComponent,
+    ShowfooditemsComponent
   ],
   imports: [
     BrowserModule,

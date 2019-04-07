@@ -1,0 +1,45 @@
+<div class="card-panel  orange lighten-2 col s12 black-text darken-4-text">
+  <div class="col s2">Add food item</div>
+  <div class="row">
+      <div class="input-field col s6">
+        <div class="col s1"><label class="black-text">Name</label></div>
+          <input id="fooditemName" type="text" class="validate" [(ngModel)] = "foodItem.fooditemName">
+          </div>
+        <div class="input-field col s6">
+          <div class="col s1"><label class="black-text">Price</label></div>
+          <input id="password" type="password" class="validate"[(ngModel)] = "foodItem.fooditemprice">
+        </div>
+  </div>
+
+
+  <div class="row">
+    <div class="row">
+      <div class="input-field col s12">
+          <div class="col s1"><label class="black-text">Description</label></div>
+        <textarea id="textarea2" class="materialize-textarea" [(ngModel)]="foodItem.description" ></textarea>
+       </div>
+    </div>
+  </div>
+  <div class="col s2"><button type="submit" class="btn btn-success orange darken-4" (click) = "onSubmit()">Register</button></div>
+</div>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Error</h4>
+    <p>{{foodItem.fooditemName}} error</p>
+  </div>
+  <div class="modal-footer">
+    <a routerLink="/register" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <h4>Food Item Added Successfully</h4>
+    <p>{{foodItem.fooditemName}} added Successfully</p>
+  </div>
+  <div class="modal-footer">
+    <a routerLink="/login" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+  </div>
+</div>
+
