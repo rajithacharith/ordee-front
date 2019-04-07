@@ -1,25 +1,20 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Logo</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">JavaScript</a></li>
-    </ul>
-  </div>
-</nav>
-<div class="row card-panel  orange lighten-2">
-  <div class="col s2">Login</div>
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
+
+<div class="row card-panel white">
+  
   
   <form>
       <div class="form-group">
+        <div class="col s4">LOGO</div>
           <div class="col s1"><label class="black-text" for="username">Username</label></div>
-          <div class="col s3"><input type="text" class="form-control orange lighten-2" id="username" name="username" [(ngModel)] = "user.username" ng-required = true></div>
+          <div class="col s2"><input type="text" class="form-control white" id="username" name="username" [(ngModel)] = "user.username" ng-required = true></div>
           
         </div>
     <div class="form-group">
       <div class="col s1"><label class="black-text" for="password">Password</label></div>
-      <div class="col s3"><input type="password" class="form-control orange lighten-2" id="password" name = "password" [(ngModel)]="user.password" ng-required = true></div>
+      <div class="col s2"><input type="password" class="form-control white" id="password" name = "password" [(ngModel)]="user.password" ng-required = true></div>
       
     </div>
     <div class="col s2"><button type="submit" class="btn btn-success orange darken-4" (click) = "onSubmit()">Login</button></div>
@@ -37,3 +32,57 @@
     <a routerLink="/login" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
   </div>
 </div>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center">"Ordee"</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Your online food store</h5>
+      </div>
+       <br><br>
+
+    </div>
+  </div>
+  <div class="parallax"><img src="../../assets/home-main.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Our Specials</h2>
+    </div>
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

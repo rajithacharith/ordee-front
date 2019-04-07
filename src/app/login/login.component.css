@@ -5,3 +5,42 @@
     border-radius: 2px;
     background-color: #fff;
 }
+
+.parallax-container{
+    height:40em; background-size:cover; width:auto;
+    background-image:url('../../assets/home-main.jpg');
+    background-position:50% 50%;
+  }
+
+h1, h2, h3, h4 {
+	font-family: 'Raleway', sans-serif;
+}
+
+.parallax-container h1 {
+    font-family: 'Rochester', cursive;
+    font-size: 200px;
+    color: rgb(255, 136, 0);
+    text-shadow: 1px 2px #3f3f3f
+}
+
+.parallax-container h5 {
+    font-family: Impact;
+    font-size: 50px;
+    color: rgb(255, 136, 0);
+    text-shadow: 1px 2px #3f3f3f
+}
+
+
+.section-title h2 {
+	text-align: center;
+}
+.section-title h2::after {
+    position: absolute;
+    content: "";
+    background: #d43031;
+    height: 2px;
+    width: 70px;
+    bottom: -30px;
+    margin-left: -35px;
+    left: 50%;
+}

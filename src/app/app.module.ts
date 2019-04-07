@@ -14,6 +14,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { AddfooditemsComponent } from './addfooditems/addfooditems.component';
 import 'tabulator-tables';
 import { ShowfooditemsComponent } from './showfooditems/showfooditems.component';
+import { MerchantdashComponent } from './merchantdash/merchantdash.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ShowfooditemsComponent } from './showfooditems/showfooditems.component'
     DashboadComponent,
     UserlistComponent,
     AddfooditemsComponent,
-    ShowfooditemsComponent
+    ShowfooditemsComponent,
+    MerchantdashComponent
   ],
   imports: [
     BrowserModule,
