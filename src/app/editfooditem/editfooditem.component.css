@@ -1,14 +1,13 @@
-.card-panel {
+.card-panel{
     transition: box-shadow .25s;
     padding: 24px;
     margin: 0 0 0 0 !important; 
     border-radius: 2px;
     background-color: #fff;
+    
 }
-
-.card-panel h5 {
-    font-family: 'Segoe UI';
-    text-align: center;
+#add-food-item {
+    height: 100vh;
 }
 
 #user-image {
@@ -16,6 +15,11 @@
     width: 50px;
 }
 
-#items {
-    height: 100vh;
+.card-panel h5 {
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+#details {
+    text-align: right;
 }

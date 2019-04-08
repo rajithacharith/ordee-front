@@ -17,6 +17,7 @@ import { ShowfooditemsComponent } from './showfooditems/showfooditems.component'
 import { MerchantdashComponent } from './merchantdash/merchantdash.component';
 import { CustomerdashComponent } from './customerdash/customerdash.component';
 import { FooditemsComponent } from './fooditems/fooditems.component';
+import { EditfooditemComponent } from './editfooditem/editfooditem.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooditemsComponent } from './fooditems/fooditems.component';
     ShowfooditemsComponent,
     MerchantdashComponent,
     CustomerdashComponent,
-    FooditemsComponent
+    FooditemsComponent,
+    EditfooditemComponent
   ],
   imports: [
     BrowserModule,
