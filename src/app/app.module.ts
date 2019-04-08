@@ -18,6 +18,7 @@ import { MerchantdashComponent } from './merchantdash/merchantdash.component';
 import { CustomerdashComponent } from './customerdash/customerdash.component';
 import { FooditemsComponent } from './fooditems/fooditems.component';
 import { EditfooditemComponent } from './editfooditem/editfooditem.component';
+import { UploadFileServiceService } from './services/upload-file-service.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { EditfooditemComponent } from './editfooditem/editfooditem.component';
     ReactiveFormsModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [UploadFileServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

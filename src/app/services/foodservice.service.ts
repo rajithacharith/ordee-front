@@ -12,8 +12,9 @@ export class FoodserviceService {
     this.http = httpClient;
   }
   public addfooditem(fooditem: foodItemDTO) {
-    const data = JSON.parse(localStorage.getItem('user'));
-    fooditem.merchantId = data.merchantID;
+    // const data = JSON.parse(localStorage.getItem('user'));
+    // fooditem.merchantId = data.merchantID;
+    fooditem.merchantId = "5001";
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Credentials', 'true');

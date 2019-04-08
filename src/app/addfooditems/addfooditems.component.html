@@ -32,10 +32,10 @@
     <div class="file-field input-field">
       <div class="btn orange darken-4">
         <span>Add Image</span>
-        <input type="file">
+        <input type="file" (change) = "select($event)">
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate " type="text">
+        <input class="file-path validate " type="text" [(ngModel)] = "filename">
       </div>
     </div>
   </form>
@@ -59,7 +59,7 @@
     <p>{{foodItem.fooditemName}} added Successfully</p>
   </div>
   <div class="modal-footer">
-    <a routerLink="/login" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+    <a routerLink="/merchantDashboard" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
   </div>
 </div>
 
