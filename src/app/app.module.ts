@@ -16,6 +16,7 @@ import 'tabulator-tables';
 import { ShowfooditemsComponent } from './showfooditems/showfooditems.component';
 import { MerchantdashComponent } from './merchantdash/merchantdash.component';
 import { CustomerdashComponent } from './customerdash/customerdash.component';
+import { FooditemsComponent } from './fooditems/fooditems.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CustomerdashComponent } from './customerdash/customerdash.component';
     AddfooditemsComponent,
     ShowfooditemsComponent,
     MerchantdashComponent,
-    CustomerdashComponent
+    CustomerdashComponent,
+    FooditemsComponent
   ],
   imports: [
     BrowserModule,

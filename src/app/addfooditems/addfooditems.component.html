@@ -1,5 +1,11 @@
-<div class="card-panel  orange lighten-2 col s12 black-text darken-4-text">
-  <div class="col s2">Add food item</div>
+<div class="row card-panel white">
+  <div class="col s3">LOGO</div>
+  <div class="col s6"><h5>Merchant-Add Food Item</h5></div>  
+  <div class="col s2" id="details"> Merchant ID <br> merchant Name</div>  
+  <div class="col s1"> <img src="../../assets/user-image-.png" alt="" class="circle responsive-img" id="user-image"></div>    
+</div>
+
+<div class="card-panel  white col s12 black-text darken-4-text" id="add-food-item">
   <div class="row">
       <div class="input-field col s6">
         <div class="col s1"><label class="black-text">Name</label></div>
@@ -7,7 +13,7 @@
           </div>
         <div class="input-field col s6">
           <div class="col s1"><label class="black-text">Price</label></div>
-          <input id="password" type="password" class="validate"[(ngModel)] = "foodItem.fooditemprice">
+          <input id="price" type="text" class="validate"[(ngModel)] = "foodItem.fooditemprice">
         </div>
   </div>
 
@@ -19,6 +25,20 @@
         <textarea id="textarea2" class="materialize-textarea" [(ngModel)]="foodItem.description" ></textarea>
        </div>
     </div>
+  </div>
+  <div class="row">
+    
+  <form action="#">
+    <div class="file-field input-field">
+      <div class="btn orange darken-4">
+        <span>Add Image</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate " type="text">
+      </div>
+    </div>
+  </form>
   </div>
   <div class="col s2"><button type="submit" class="btn btn-success orange darken-4" (click) = "onSubmit()">Register</button></div>
 </div>
