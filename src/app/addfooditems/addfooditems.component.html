@@ -9,11 +9,11 @@
   <div class="row">
       <div class="input-field col s6">
         <div class="col s1"><label class="black-text">Name</label></div>
-          <input id="fooditemName" type="text" class="validate" [(ngModel)] = "foodItem.fooditemName">
+          <input id="fooditemName" type="text" class="validate" name="name" [(ngModel)] = "foodItem.foodName" >
           </div>
         <div class="input-field col s6">
           <div class="col s1"><label class="black-text">Price</label></div>
-          <input id="price" type="text" class="validate"[(ngModel)] = "foodItem.fooditemprice">
+          <input id="price" type="text" class="validate"[(ngModel)] = "foodItem.price" name="price">
         </div>
   </div>
 
@@ -22,7 +22,7 @@
     <div class="row">
       <div class="input-field col s12">
           <div class="col s1"><label class="black-text">Description</label></div>
-        <textarea id="textarea2" class="materialize-textarea" [(ngModel)]="foodItem.description" ></textarea>
+        <textarea id="textarea2" class="materialize-textarea"  name="description" [(ngModel)]="foodItem.description" ></textarea>
        </div>
     </div>
   </div>
@@ -32,10 +32,10 @@
     <div class="file-field input-field">
       <div class="btn orange darken-4">
         <span>Add Image</span>
-        <input type="file" (change) = "select($event)">
+        <input id="file" type="file" (change) = "select($event)">
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate " type="text" [(ngModel)] = "filename">
+        <input id="filename" class="file-path validate " name="filename" type="text" [(ngModel)] = "this.filename">
       </div>
     </div>
   </form>

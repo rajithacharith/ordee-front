@@ -1,0 +1,21 @@
+.card-panel {
+    transition: box-shadow .25s;
+    padding: 24px;
+    margin: 0 0 0 0 !important; 
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.card-panel h5 {
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+#user-image {
+    height: 50px;
+    width: 50px;
+}
+
+#items {
+    height: 100vh;
+}

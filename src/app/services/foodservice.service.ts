@@ -14,7 +14,8 @@ export class FoodserviceService {
   public addfooditem(fooditem: foodItemDTO) {
     // const data = JSON.parse(localStorage.getItem('user'));
     // fooditem.merchantId = data.merchantID;
-    fooditem.merchantId = "5001";
+    fooditem.merchantID = "5001";
+    console.log(fooditem);
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Credentials', 'true');
@@ -23,11 +24,7 @@ export class FoodserviceService {
     this.http.post('http://localhost:8080/api/merchant/addFoodItem', fooditem, headers).subscribe(res => {
         console.log(res);
         this.router.navigate(['/dashboard']);
-    },
-        err => {
-        console.log('Error Occured');
-
-      });
+    });
 
 
   }

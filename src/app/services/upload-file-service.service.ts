@@ -9,7 +9,7 @@ export class UploadFileServiceService {
 
   constructor(private http: HttpClient) { }
 
-  async pushFileToStorage(file: FileList): Promise<Observable<HttpEvent<{}>>> {
+  async pushFileToStorage(file: FileList){
     let formdata = new FormData(); 
     console.log(file);
     formdata.append('file', file.item(0));
@@ -20,17 +20,16 @@ export class UploadFileServiceService {
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     const requestOpt = { headers: headers}
-    this.http.post('http://localhost:8080/api/merchant/addPhotos',formdata, requestOpt ).subscribe(e => {
-      console.log(e);
-    })
+    this.http.post('http://localhost:8080/api/merchant/addPhotos',formdata, requestOpt ).subscribe(res => {
+      console.log(res);
+    }, e =>{
+      console.log("Error Occurd")
+    });
     
  
-    const req = new HttpRequest('POST', 'http://localhost:8080/api/merchant/addPhotos', formdata, {
-      reportProgress: true,
-      responseType: 'text'
-    });
+    
  
-    return this.http.request(req);
+    
   }
  
   

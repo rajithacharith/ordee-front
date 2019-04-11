@@ -1,0 +1,27 @@
+<div class="row card-panel white">
+  <div class="col s3">LOGO</div>
+  <div class="col s6"><h5>Food items</h5></div>  
+  <div class="col s2" id="details"> Merchant ID <br> merchant Name</div>  
+  <div class="col s1"> <img src="../../assets/user-image-.png" alt="" class="circle responsive-img" id="user-image"></div>    
+  </div>
+
+
+  <div class="card-panel white" id="items">
+    <div class="collection">
+      <a *ngFor = "let merchant of datalist" href="#!" class="collection-item orange-text text-darken-3"><div class="col s12 m8 offset-m2 l6 offset-l3" >
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img src="../../assets/user-image-.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                  {{merchant.merchantName}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div></a>
+     
+    </div>
+  </div>

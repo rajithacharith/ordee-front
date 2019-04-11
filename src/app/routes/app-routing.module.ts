@@ -10,6 +10,7 @@ import { MerchantdashComponent } from '../merchantdash/merchantdash.component';
 import { CustomerdashComponent } from '../customerdash/customerdash.component';
 import { FooditemsComponent } from '../fooditems/fooditems.component';
 import { EditfooditemComponent } from '../editfooditem/editfooditem.component';
+import { MerchantListComponent } from '../merchant-list/merchant-list.component';
 const routes: Routes = [
   {path: '' , component: AppComponent},
   {path: 'home' , component: AppComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'customerDashboard' , component: CustomerdashComponent},
   {path: 'foodItems' , component: FooditemsComponent},
   {path: 'editfooditem' , component: EditfooditemComponent},
+  {path: 'merchants', component: MerchantListComponent },
   {path: 'dashboard' , component: DashboadComponent}
 ];
 @NgModule({

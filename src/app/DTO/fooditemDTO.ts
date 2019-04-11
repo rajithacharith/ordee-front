@@ -1,9 +1,9 @@
 export class foodItemDTO {
-    public fooditemName;
+    public foodName;
     public description;
-    public fooditemprice;
-    public merchantId;
-    public image = [];
+    public price;
+    public merchantID;
+    public image;
     constructor() {
 
     }

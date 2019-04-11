@@ -13,7 +13,7 @@ import { FoodserviceService } from '../services/foodservice.service';
 export class AddfooditemsComponent implements OnInit {
   showFile = false
   fileUploads: Observable<string[]>
-  selectedFile: any;
+  selectedFile: FileList;
   currentFileUpload: FileList;
   fileName: String;
   progress: { percentage: number } = { percentage: 0 }
@@ -26,6 +26,7 @@ export class AddfooditemsComponent implements OnInit {
   }
 
   async onSubmit() {
+    console.log(this.selectedFile.item(0).name);
     await this.upload();
     this.foodService.addfooditem(this.foodItem);
 
@@ -43,18 +44,11 @@ export class AddfooditemsComponent implements OnInit {
 
   async upload() {
     this.progress.percentage = 0;
-    this.foodItem.image.push(this.fileName);
+    this.foodItem.image = this.selectedFile.item(0).name;
     this.currentFileUpload = this.selectedFile;
     var e = await this.uploadService.pushFileToStorage(this.currentFileUpload);
-    console.log(e);
-    // this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
-    //   if (event.type === HttpEventType.UploadProgress) {
-    //     this.progress.percentage = Math.round(100 * event.loaded / event.total);
-    //     console.log(this.progress.percentage);
-    //   } else if (event instanceof HttpResponse) {
-    //     console.log('File is completely uploaded!');
-    //   }
-    // })
+    
+    
  
     this.selectedFile = undefined
   }
