@@ -6,11 +6,57 @@
   </div>
 
 
-  <div class="card-panel white" id="items">
-    <div class="collection">
-      <a href="#!" class="collection-item orange-text text-darken-3"><span class="badge">1</span>Alan</a>
-      <a href="#!" class="collection-item orange-text text-darken-3"><span class="new badge">4</span>Alan</a>
-      <a href="#!" class="collection-item orange-text text-darken-3">Alan</a>
-      <a href="#!" class="collection-item orange-text text-darken-3"><span class="badge">14</span>Alan</a>
+  <div class="row" id="items">
+    <div class="collection" *ngIf = "noFoodItem==false">
+      
+        
+        <div class="card-panel white col s8" id="items">
+            <ul *ngFor = "let food of foodData" class="collection">
+                <li class="collection-item avatar">
+                  <img src="../../assets/user-image-.png" alt="" class="circle">
+                  <span class="title">{{food.foodItemName}}</span>
+                  <p>{{food.description}} <br>
+                     {{food.price}}
+                  </p>
+                  <a class="secondary-content"><i class="material-icons" (click) = "selectFood(food)">add_circle</i></a>
+                </li>
+            </ul>
+            
+          </div>
+          <div class="col s4">
+            <div  style="height:70vh">
+            List of items:
+            d
+            <ul *ngFor = "let order of orderList" class="collection">
+                <li class="collection-item avatar">
+                  <img src="images/yuna.jpg" alt="" class="circle">
+                  <span class="title">{{order.foodItemName}}</span>
+                  <p>{{order.price}} <br>
+                     Second Line
+                  </p>
+                  <a class="secondary-content"><i class="material-icons" (click) = "removeOrder(order)">remove_circle</i></a>
+                </li>
+            </ul>
+          </div>
+            <div style="">
+                Total Amount : <p style="text-align:right">{{checkOutPrice}}</p>
+                <a class="waves-effect waves-light btn" (click)="addOrder()">Proceed</a>
+              </div>
+            
+
+          </div>
+      
+    </div>
+    <div class="collection" *ngIf = "noFoodItem==true">
+      <div class="">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            No Food Items for Selected Customer
+            
+          
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>

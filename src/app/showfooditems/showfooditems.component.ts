@@ -21,19 +21,7 @@ export class ShowfooditemsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.columnNames = [
-      { title: 'Name', field: 'name', width: 150 },
-      { title: 'Age', field: 'age', align: 'left', formatter: 'progress' },
-      { title: 'Favourite Color', field: 'col' },
-      { title: 'Date Of Birth', field: 'dob', align: 'center' },
-      { title: 'Rating', field: 'rating', align: 'center', formatter: 'star' },
-      { title: 'Passed?', field: 'passed', align: 'center', formatter: 'tickCross' }
-    ];
-    this.foodService.showFoodItems().then(res => {
-      console.log(res);
-     this.tableData = res;
-     this.dataReceived = true;
-   });
+    
 
 
   }

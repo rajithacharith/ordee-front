@@ -19,3 +19,6 @@
 #items {
     height: 100vh;
 }
+i {
+    cursor: pointer;
+}

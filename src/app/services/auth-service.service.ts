@@ -26,9 +26,19 @@ export class AuthServiceService {
 
     this.http.post('http://localhost:8080/api/login', user, headers).subscribe(res =>{
         console.log(res);
-        localStorage.setItem('user', res);
-
-        this.router.navigate(['/dashboard']);
+        localStorage.setItem('user', JSON.stringify(res));
+        var data = localStorage.getItem('user');
+        console.log(data);
+        console.log(res);
+        if(res.merchantID){
+          console.log("this is merchant");
+          this.router.navigate(['/merchantDashboard']);
+        }
+        else if(res.customerId){
+          console.log("this is customer");
+          this.router.navigate(['/customerDashboard']);
+        }
+        
   }
       , err=>{
         console.log('Error Occured');
