@@ -22,3 +22,15 @@
 i {
     cursor: pointer;
 }
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    align-self: center;
+    top: 50vh; 
+    left: 70vh;
+    height: 40vh;
+    width: 40vh;
+    background-color: rgba(255,255,255,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }

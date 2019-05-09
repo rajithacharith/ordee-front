@@ -11,7 +11,7 @@ import { orderListDTO } from '../DTO/orderListDTO';
 })
 export class FoodserviceService {
   foodItems = { data: ""}
-
+  
   private http: any;
   constructor(private httpClient: HttpClient, private router: Router) {
     this.http = httpClient;
@@ -84,9 +84,22 @@ export class FoodserviceService {
     this.http.post('http://localhost:8080/api/customer/addOrder', orderList, headers).subscribe(
       (res) => {
         console.log(res);
+        console.log("Order Success");
+        this.callOrderSuccess();
+      },
+      err =>{
+        
       }
     )
 
 
   }
+
+  private orderSuccess = new Subject<any>();
+  public orderSuccess$ = this.orderSuccess.asObservable();
+
+  callOrderSuccess(){
+    this.orderSuccess.next();
+  }
+
 }

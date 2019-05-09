@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { FoodserviceService } from '../services/foodservice.service';
-
+import { Subject } from 'rxjs';
+declare var $:any;
 @Component({
   selector: 'app-fooditems',
   templateUrl: './fooditems.component.html',
@@ -14,9 +15,18 @@ export class FooditemsComponent implements OnInit {
   private orderList = new Array();
   public checkBox = false;
   private checkOutPrice = 0;
+  private loading = false;
   constructor(private data: DataService,private foodService: FoodserviceService) { }
 
   ngOnInit() {
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+    $(document).ready(function(){
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    }); 
+
     this.data.merchant.subscribe((data)=>{
       this.merchant = data;
       console.log(this.merchant);
@@ -34,6 +44,12 @@ export class FooditemsComponent implements OnInit {
         this.foodData = res;
       }
     })
+
+    this.foodService.orderSuccess$.subscribe(
+      ()=>{
+        this.orderSucessPopUp();
+      }
+    )
   }
 
   selectFood(foodItem){
@@ -52,7 +68,24 @@ export class FooditemsComponent implements OnInit {
 
   }
   addOrder(){
+    this.loading = true;
+    console.log("Loading : ",this.loading);
     console.log("Order added");
     this.foodService.addOrder(this.orderList);
   }
+
+  orderSucessPopUp(){
+    this.loading = false;
+    console.log("Loading : ",this.loading);
+    $('#orderSuccess').modal('open');
+  }
+
+  clearData(){
+    this.checkOutPrice =0;
+    this.orderList = new Array();
+    console.log(this.orderList,this.checkOutPrice);
+  }
+
+ 
+
 }
