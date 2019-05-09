@@ -53,5 +53,6 @@ export class FooditemsComponent implements OnInit {
   }
   addOrder(){
     console.log("Order added");
+    this.foodService.addOrder(this.orderList);
   }
 }

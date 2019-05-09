@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import { Subject } from 'rxjs';
 import { orderDTO } from '../DTO/orderDTO';
+import { orderListDTO } from '../DTO/orderListDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -57,21 +58,30 @@ export class FoodserviceService {
   }
 
   addOrder(foodItem){
+    console.log(foodItem);
     // const user = JSON.parse(localStorage.getItem('user'));
+    const data = JSON.parse(localStorage.getItem('user'));
+    console.log(data);
+    var orderList = new orderListDTO();
+   // var order = new orderDTO();
+    let orderItems = new Array();
+    foodItem.forEach(element => {
+      let item = new orderDTO();
+      item.foodItemID = element.foodItemID;
+      item.merchantID = element.merchantID;
+      orderItems.push(element);
+      console.log(element)
+    });
+   
+    orderList.customerID = data.customerId;
+    orderList.orderList = orderItems;
     
-    var order = new orderDTO();
-    order.customerID = '1000';
-    order.merchantID = foodItem.merchantID;
-    order.foodItemID = foodItem.foodItemID;
-    order.quantity = 1;
-    
-    
-    
+    console.log(orderList);
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Credentials', 'true');
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
-    this.http.post('http://localhost:8080/api/customer/addOrder', order, headers).subscribe(
+    this.http.post('http://localhost:8080/api/customer/addOrder', orderList, headers).subscribe(
       (res) => {
         console.log(res);
       }
