@@ -12,8 +12,8 @@ import { FooditemsComponent } from '../fooditems/fooditems.component';
 import { EditfooditemComponent } from '../editfooditem/editfooditem.component';
 import { MerchantListComponent } from '../merchant-list/merchant-list.component';
 const routes: Routes = [
-  {path: '' , component: AppComponent},
-  {path: 'home' , component: AppComponent},
+  {path: '' , component: LoginComponent},
+  {path: 'home' , component: LoginComponent},
   {path: 'register' , component: RegisterComponent},
   {path: 'login' , component: LoginComponent},
   {path: 'addfooditem' , component: AddfooditemsComponent},

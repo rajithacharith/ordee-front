@@ -21,8 +21,23 @@
                   <a class="secondary-content"><i class="material-icons" (click) = "selectFood(food)">add_circle</i></a>
                 </li>
             </ul>
+
+            <div class="row" *ngIf = "hasRecomendation" >
+              <p>You might also like to buy</p>
+                <ul *ngFor = "let food of recomendation" class="collection col s2">
+                    <li class="collection-item avatar">
+                      <img src="../../assets/user-image-.png" alt="" class="circle" style="scale: 25%">
+                      <br>
+                      <br>
+                     {{food.foodItemName}}
+                      <br>
+                      <a class="secondary-content"><i class="material-icons" (click) = "selectFood(food)">add_circle</i></a>
+                    </li>
+                </ul>
+
+            </div>
             
-          </div>
+        </div>
           <div class="col s4">
             <div  style="height:70vh">
             List of items:

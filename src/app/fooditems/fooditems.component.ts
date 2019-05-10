@@ -15,7 +15,9 @@ export class FooditemsComponent implements OnInit {
   private orderList = new Array();
   public checkBox = false;
   private checkOutPrice = 0;
-  private loading = false;
+  public loading = false;
+  private recomendation;
+  private hasRecomendation = false;
   constructor(private data: DataService,private foodService: FoodserviceService) { }
 
   ngOnInit() {
@@ -50,11 +52,24 @@ export class FooditemsComponent implements OnInit {
         this.orderSucessPopUp();
       }
     )
+    this.foodService.recomendationSuccess$.subscribe(
+      (message) => {
+        console.log(message.data);
+        this.recomendation = message.data;
+        if(this.recomendation.length>0){
+          this.hasRecomendation = true;
+        }
+        else{
+        this.hasRecomendation = false;
+        }
+      }
+    )
   }
 
   selectFood(foodItem){
     this.checkOutPrice+=foodItem.price;
     this.orderList.push(foodItem);
+    this.foodService.getRecomendations(this.orderList);
     console.log(this.orderList);
 
     //this.foodService.addOrder(foodItem);

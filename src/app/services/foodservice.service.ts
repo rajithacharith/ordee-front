@@ -23,7 +23,8 @@ export class FoodserviceService {
   // Observable string stream
   dataString$ = this.foodItemSource.asObservable();
 
-  
+  private recomendations = false;
+  private recomendationData = [];
   public addfooditem(fooditem: foodItemDTO) {
     const data = JSON.parse(localStorage.getItem('user'));
     console.log(data);
@@ -100,6 +101,36 @@ export class FoodserviceService {
 
   callOrderSuccess(){
     this.orderSuccess.next();
+  }
+
+  private recomendationSuccess = new Subject<any>();
+  public recomendationSuccess$ = this.recomendationSuccess.asObservable();
+
+  getRecomendations(foodItemList){
+
+    let foodList = [];
+    foodItemList.forEach(element => {
+      foodList.push(element.foodItemID)
+    });
+
+    console.log(foodList);
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
+    this.http.post('http://localhost:8080/api/customer/recommendation', foodList, headers).subscribe(
+      (res) => {
+        console.log(res);
+        
+        this.recomendationSuccess.next({data : res})
+          
+       
+      },
+      err =>{
+        
+      }
+    )
+
   }
 
 }
