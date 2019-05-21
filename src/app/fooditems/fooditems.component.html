@@ -13,7 +13,7 @@
         <div class="card-panel white col s8" id="items">
             <ul *ngFor = "let food of foodData" class="collection">
                 <li class="collection-item avatar">
-                  <img src="../../assets/user-image-.png" alt="" class="circle">
+                  <img src = {{food.url}} alt="" class="circle">
                   <span class="title">{{food.foodItemName}}</span>
                   <p>{{food.description}} <br>
                      {{food.price}}
@@ -26,7 +26,7 @@
               <p>You might also like to buy</p>
                 <ul *ngFor = "let food of recomendation" class="collection col s2">
                     <li class="collection-item avatar">
-                      <img src="../../assets/user-image-.png" alt="" class="circle" style="scale: 25%">
+                      <img src={{food.url}} alt="" class="circle" style="scale: 25%">
                       <br>
                       <br>
                      {{food.foodItemName}}
@@ -44,7 +44,7 @@
             d
             <ul *ngFor = "let order of orderList" class="collection">
                 <li class="collection-item avatar">
-                  <img src="images/yuna.jpg" alt="" class="circle">
+                  <img src={{order.url}} alt="" class="circle">
                   <span class="title">{{order.foodItemName}}</span>
                   <p>{{order.price}} <br>
                      Second Line

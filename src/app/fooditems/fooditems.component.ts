@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { FoodserviceService } from '../services/foodservice.service';
 import { Subject } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
+import { forEach } from '@angular/router/src/utils/collection';
+
 declare var $:any;
 @Component({
   selector: 'app-fooditems',
@@ -18,7 +21,7 @@ export class FooditemsComponent implements OnInit {
   public loading = false;
   private recomendation;
   private hasRecomendation = false;
-  constructor(private data: DataService,private foodService: FoodserviceService) { }
+  constructor(private data: DataService,private foodService: FoodserviceService,private sanitizer:DomSanitizer) { }
 
   ngOnInit() {
     $(document).ready(function(){
@@ -44,6 +47,13 @@ export class FooditemsComponent implements OnInit {
       }else{
         this.noFoodItem = false;
         this.foodData = res;
+
+        this.foodData.forEach(element => {
+          let imgName = element.image;
+          element.url = "http://localhost:8080/api/file/"+element.image;
+          console.log(element.url);
+        });
+        
       }
     })
 

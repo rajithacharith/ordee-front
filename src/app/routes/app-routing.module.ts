@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'customerDashboard' , component: CustomerdashComponent},
   {path: 'foodItems' , component: FooditemsComponent},
   {path: 'editfooditem' , component: EditfooditemComponent},
-  {path: 'merchants', component: MerchantListComponent },
+  {path: 'merchantList', component: MerchantListComponent },
   {path: 'dashboard' , component: DashboadComponent}
 ];
 @NgModule({

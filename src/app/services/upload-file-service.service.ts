@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UploadFileServiceService {
 
   constructor(private http: HttpClient) { }
-
+  public image;
   async pushFileToStorage(file: FileList){
     let formdata = new FormData(); 
     console.log(file);
@@ -30,6 +30,15 @@ export class UploadFileServiceService {
     
  
     
+  }
+
+  getFile(fileName){
+      this.http.get('http:localhost:8080/api/getImage?image='+fileName).subscribe(
+        res =>{
+          this.image = res;
+          console.log(res);
+        }
+      )
   }
  
   

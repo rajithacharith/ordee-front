@@ -48,6 +48,11 @@ export class FoodserviceService {
     this.http.get("http://localhost:8080/api/customer/foodByMerchant?merchantID="+merchant.merchantID).subscribe((res)=>
     {
       console.log(res);
+      res.forEach(element => {
+        let imgName = element.image;
+          element.url = "http://localhost:8080/api/file/"+element.image;
+          console.log(element.url);
+      });
       this.saveFoodItems(res);
     })
 
@@ -121,6 +126,12 @@ export class FoodserviceService {
     this.http.post('http://localhost:8080/api/customer/recommendation', foodList, headers).subscribe(
       (res) => {
         console.log(res);
+        res.forEach(element => {
+          let imgName = element.image;
+            element.url = "http://localhost:8080/api/file/"+element.image;
+            console.log(element.url);
+        });
+
         
         this.recomendationSuccess.next({data : res})
           
