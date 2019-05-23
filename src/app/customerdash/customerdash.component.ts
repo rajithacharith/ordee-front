@@ -12,4 +12,8 @@ export class CustomerdashComponent implements OnInit {
   ngOnInit() {
   }
 
+  addFood(){
+    console.log("Clicked");
+  }
+
 }

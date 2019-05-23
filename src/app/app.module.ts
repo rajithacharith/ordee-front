@@ -20,6 +20,8 @@ import { FooditemsComponent } from './fooditems/fooditems.component';
 import { EditfooditemComponent } from './editfooditem/editfooditem.component';
 import { UploadFileServiceService } from './services/upload-file-service.service';
 import { MerchantListComponent } from './merchant-list/merchant-list.component';
+import { MerchantOrdersComponent } from './merchant-orders/merchant-orders.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { MerchantListComponent } from './merchant-list/merchant-list.component';
     CustomerdashComponent,
     FooditemsComponent,
     EditfooditemComponent,
-    MerchantListComponent
+    MerchantListComponent,
+    MerchantOrdersComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

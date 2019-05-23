@@ -1,0 +1,12 @@
+<div class="card-panel white col s8" id="items">
+  <ul *ngFor = "let order of orderData" class="collection">
+      <li class="collection-item avatar">
+        <img src = {{order.foodItemBean.url}} alt="" class="circle">
+        <span class="title">{{order.foodItemBean.foodItemName}}</span>
+        <p>{{order.customerID}} <br>
+           
+        </p>
+        <a class="secondary-content"><i class="material-icons" (click) = "selectFood(food)">add_circle</i></a>
+      </li>
+  </ul>
+</div>

@@ -11,6 +11,8 @@ import { CustomerdashComponent } from '../customerdash/customerdash.component';
 import { FooditemsComponent } from '../fooditems/fooditems.component';
 import { EditfooditemComponent } from '../editfooditem/editfooditem.component';
 import { MerchantListComponent } from '../merchant-list/merchant-list.component';
+import { MerchantOrdersComponent } from '../merchant-orders/merchant-orders.component';
+import { from } from 'rxjs';
 const routes: Routes = [
   {path: '' , component: LoginComponent},
   {path: 'home' , component: LoginComponent},
@@ -23,6 +25,7 @@ const routes: Routes = [
   {path: 'foodItems' , component: FooditemsComponent},
   {path: 'editfooditem' , component: EditfooditemComponent},
   {path: 'merchantList', component: MerchantListComponent },
+  {path: 'merchantOrders', component: MerchantOrdersComponent },
   {path: 'dashboard' , component: DashboadComponent}
 ];
 @NgModule({

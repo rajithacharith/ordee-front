@@ -30,6 +30,7 @@ export class AuthServiceService {
         var data = localStorage.getItem('user');
         console.log(data);
         console.log(res);
+        this.loginSuccess.next();
         if(res.merchantID){
           console.log("this is merchant");
           this.router.navigate(['/merchantDashboard']);
@@ -83,10 +84,12 @@ export class AuthServiceService {
   private registerError = new Subject<any>();
   private registerSuccess = new Subject<any>();
   private loginFaild = new Subject<any>();
+  private loginSuccess = new Subject<any>();
   // Observable string streams
   public errorMethodCalled$ = this.registerError.asObservable();
   public registerSuccessfull$ = this.registerSuccess.asObservable();
   public loginfaild$ = this.loginFaild.asObservable();
+  public loginSuccess$ = this.loginSuccess.asObservable();
   // Service message commands
   callErrorPopUp() {
     this.registerError.next();

@@ -35,4 +35,19 @@ export class MerchantService {
     this.dataStringSource.next(this.sharingData.name);
   }
 
+  private orderDetails = new Subject<any>();
+  public orderDetails$ = this.orderDetails.asObservable();
+
+  public getOrders(merchant){
+    this.http.get("http://localhost:8080/api/merchant/checkOrders?merchantID="+merchant).subscribe(
+      res =>{
+        console.log(res);
+        this.orderDetails.next({orderData : res});
+      }
+    )
+  }
+
+  
+
+
 }
