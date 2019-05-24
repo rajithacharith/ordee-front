@@ -7,7 +7,9 @@
   
   <form>
       <div class="form-group">
-        <div class="col s4">LOGO</div>
+        <div class="col s4">
+          <button  class="btn btn-success orange darken-4" (click) = "registerUser()">Register Now</button>
+        </div>
           <div class="col s1"><label class="black-text" for="username">Username</label></div>
           <div class="col s2"><input type="text" class="form-control white" id="username" name="username" [(ngModel)] = "user.username" ng-required = true></div>
           

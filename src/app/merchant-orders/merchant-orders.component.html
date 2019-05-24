@@ -1,5 +1,5 @@
 <div class="card-panel white col s8" id="items">
-  <ul *ngFor = "let order of orderData" class="collection">
+  <!-- <ul *ngFor = "let order of orderData" class="collection">
       <li class="collection-item avatar">
         <img src = {{order.foodItemBean.url}} alt="" class="circle">
         <span class="title">{{order.foodItemBean.foodItemName}}</span>
@@ -8,5 +8,23 @@
         </p>
         <a class="secondary-content"><i class="material-icons" (click) = "selectFood(food)">add_circle</i></a>
       </li>
+  </ul> -->
+
+  <ul class="collapsible" materialize="collapsible"  *ngFor = "let order of orderData"  >
+    <li>
+      <div class="collapsible-header" ><img src = {{order.foodItemBean.url}} alt="" style="height: 20%;width: 20%" class="circle">
+        <span class="title">{{order.foodItemBean.foodItemName}}</span>
+        <br>
+      <span>Customer Info:<br>
+        Name : {{order.customer.customerName}}<br> Telephone : {{order.customer.telephoneNo}}</span></div>
+        <select class="browser-default">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      <!-- <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div> -->
+    </li>
+    
   </ul>
 </div>

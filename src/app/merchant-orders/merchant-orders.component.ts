@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MerchantService } from '../services/merchant.service';
-
+declare var $:any;
 @Component({
   selector: 'app-merchant-orders',
   templateUrl: './merchant-orders.component.html',
@@ -26,6 +26,9 @@ export class MerchantOrdersComponent implements OnInit {
       console.log(this.orderData);
     });
 
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
 
   }
 

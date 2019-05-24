@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { loginDTO } from '../DTO/loginDTO';
 import { AuthServiceService } from '../services/auth-service.service';
+import {Router} from '@angular/router';
 import * as M from "materialize-css/dist/js/materialize";
 declare var $:any;
 @Component({
@@ -10,7 +11,7 @@ declare var $:any;
 })
 export class LoginComponent implements OnInit {
   public user;
-  constructor(private authService:AuthServiceService) { 
+  constructor(private authService:AuthServiceService,private router: Router) { 
     this.user = new loginDTO();
    }
 
@@ -37,5 +38,9 @@ export class LoginComponent implements OnInit {
   popUpError(){
     console.log("3");
     $('#modal1').modal('open');
+  }
+
+  registerUser(){
+    this.router.navigate(['/register']);
   }
 }
