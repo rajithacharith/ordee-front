@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as M from "materialize-css/dist/js/materialize";
 import { AuthServiceService } from '../services/auth-service.service';
 import {MaterializeAction} from 'angular2-materialize'
+import { DataService } from '../services/data.service';
 declare var $:any;
 
 
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   
   public user: registerDTO;
   
-  constructor(private authService : AuthServiceService) { 
+  constructor(private authService : AuthServiceService, private dataService: DataService) { 
     this.user = new registerDTO();
     console.log("Register Started");
  
@@ -42,6 +43,8 @@ export class RegisterComponent implements OnInit {
         this.popUpSuccess();
       }
     );
+
+    this.dataService.change();
 
   }
 

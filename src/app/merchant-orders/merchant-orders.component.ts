@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MerchantService } from '../services/merchant.service';
+import { DataService } from '../services/data.service';
 declare var $:any;
 @Component({
   selector: 'app-merchant-orders',
@@ -8,9 +9,10 @@ declare var $:any;
 })
 export class MerchantOrdersComponent implements OnInit {
   public orderData;
-  constructor(private merchantService : MerchantService ) { }
+  constructor(private merchantService : MerchantService, private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.change();
     const data = JSON.parse(localStorage.getItem("user"));
     console.log(data);
     this.merchantService.getOrders(data.merchantID);

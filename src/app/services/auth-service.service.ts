@@ -101,4 +101,8 @@ export class AuthServiceService {
     console.log("1");
     this.loginFaild.next();
   }
+
+  isLoggedIn(){
+    return !(localStorage.getItem('user') === null);
+  }
 }
