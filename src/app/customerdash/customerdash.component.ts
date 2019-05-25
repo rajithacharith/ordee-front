@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CustomerdashComponent implements OnInit {
 
   constructor() { }
-  private user;
+  public user;
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem("user"));
 

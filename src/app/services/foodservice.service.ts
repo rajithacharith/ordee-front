@@ -123,12 +123,12 @@ export class FoodserviceService {
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Credentials', 'true');
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
-    this.http.post('http://localhost:8080/api/customer/recommendation', foodList, headers).subscribe(
+    this.http.post('/customer/recommendation', foodList, headers).subscribe(
       (res) => {
         console.log(res);
         res.forEach(element => {
           let imgName = element.image;
-            element.url = "http://localhost:8080/api/file/"+element.image;
+            element.url = "/api/file/"+element.image;
             console.log(element.url);
         });
 

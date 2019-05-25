@@ -18,7 +18,7 @@ export class MerchantService {
   constructor(private http: HttpClient) { }
 
   getMerchants(){
-    this.http.get("http://localhost:8080/api/customer/getMerchants").subscribe((res)=>
+    this.http.get("/api/customer/getMerchants").subscribe((res)=>
     {
       console.log(res);
       this.saveData(res);
@@ -39,7 +39,7 @@ export class MerchantService {
   public orderDetails$ = this.orderDetails.asObservable();
 
   public getOrders(merchant){
-    this.http.get("http://localhost:8080/api/merchant/checkOrders?merchantID="+merchant).subscribe(
+    this.http.get("/api/merchant/checkOrders?merchantID="+merchant).subscribe(
       res =>{
         console.log(res);
         this.orderDetails.next({orderData : res});

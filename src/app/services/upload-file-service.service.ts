@@ -20,7 +20,7 @@ export class UploadFileServiceService {
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     const requestOpt = { headers: headers}
-    this.http.post('http://localhost:8080/api/merchant/addPhotos',formdata, requestOpt ).subscribe(res => {
+    this.http.post('/api/merchant/addPhotos',formdata, requestOpt ).subscribe(res => {
       console.log(res);
     }, e =>{
       console.log("Error Occurd")
@@ -33,7 +33,7 @@ export class UploadFileServiceService {
   }
 
   getFile(fileName){
-      this.http.get('http:localhost:8080/api/getImage?image='+fileName).subscribe(
+      this.http.get('/api/getImage?image='+fileName).subscribe(
         res =>{
           this.image = res;
           console.log(res);

@@ -24,7 +24,7 @@ export class AuthServiceService {
     headers.append('Access-Control-Allow-Credentials','true');
     headers.append('Access-Control-Allow-Origin', "http://localhost:4200");
 
-    this.http.post('http://localhost:8080/api/login', user, headers).subscribe(res =>{
+    this.http.post('/api/login', user, headers).subscribe(res =>{
         console.log(res);
         localStorage.setItem('user', JSON.stringify(res));
         var data = localStorage.getItem('user');
@@ -54,7 +54,7 @@ export class AuthServiceService {
     headers.append('Access-Control-Allow-Credentials','true');
     headers.append('Access-Control-Allow-Origin', "http://localhost:4200");
     
-    this.http.post("http://localhost:8080/api/register",user,headers).subscribe(res =>{
+    this.http.post("/api/register",user,headers).subscribe(res =>{
       console.log(res);
       this.callRegisterSuccess();
     },err =>{
