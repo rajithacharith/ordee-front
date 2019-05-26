@@ -5,6 +5,7 @@ import * as M from "materialize-css/dist/js/materialize";
 import { AuthServiceService } from '../services/auth-service.service';
 import {MaterializeAction} from 'angular2-materialize'
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 declare var $:any;
 
 
@@ -18,13 +19,21 @@ export class RegisterComponent implements OnInit {
   
   public user: registerDTO;
   
-  constructor(private authService : AuthServiceService, private dataService: DataService) { 
+  constructor(private authService : AuthServiceService, private dataService: DataService,private router:Router) { 
     this.user = new registerDTO();
     console.log("Register Started");
  
   }
 
   ngOnInit() {
+    if(localStorage.getItem("user")){
+      let data = JSON.parse(localStorage.getItem("user"));
+      if(data.customerId){
+        this.router.navigate(['/customerDashboard']);
+      }else if(data.merchantID){
+        this.router.navigate(['/merchantDashboard']);
+      }
+  }
     $(document).ready(function(){
       $('select').formSelect();
     });

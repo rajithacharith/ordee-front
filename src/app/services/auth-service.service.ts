@@ -105,4 +105,28 @@ export class AuthServiceService {
   isLoggedIn(){
     return !(localStorage.getItem('user') === null);
   }
+  
+  isCustomer(){
+    let data = JSON.parse(localStorage.getItem("user"));
+      if(data == null){
+        return true;
+      }
+      else if (!(data.customerId== null)){
+        return true;
+      }else{
+        return false;
+      }
+    
+  }
+  isMerchant(){
+    let data = JSON.parse(localStorage.getItem("user"));
+    if(data == null){
+      return true;
+    }
+      else if (!(data.merchantID== null)){
+        return true;
+      }else{
+        return false;
+      }
+  }
 }

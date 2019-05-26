@@ -21,9 +21,11 @@ export class FooditemsComponent implements OnInit {
   public loading = false;
   private recomendation;
   private hasRecomendation = false;
+  public pageName;
   constructor(private data: DataService,private foodService: FoodserviceService,private sanitizer:DomSanitizer) { }
 
   ngOnInit() {
+    this.pageName = "Food Items";
     $(document).ready(function(){
       $('select').formSelect();
     });
@@ -50,7 +52,7 @@ export class FooditemsComponent implements OnInit {
 
         this.foodData.forEach(element => {
           let imgName = element.image;
-          element.url = "http://localhost:8080/api/file/"+element.image;
+          element.url = "/api/file/"+element.image;
           console.log(element.url);
         });
         

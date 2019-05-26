@@ -16,6 +16,14 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit() {
+    if(localStorage.getItem("user")){
+        let data = JSON.parse(localStorage.getItem("user"));
+        if(data.customerId){
+          this.router.navigate(['/customerDashboard']);
+        }else if(data.merchantID){
+          this.router.navigate(['/merchantDashboard']);
+        }
+    }
     
     //console.log(this.user.username,this.user.password);
     $(document).ready(function(){

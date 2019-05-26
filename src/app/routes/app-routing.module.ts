@@ -13,12 +13,13 @@ import { EditfooditemComponent } from '../editfooditem/editfooditem.component';
 import { MerchantListComponent } from '../merchant-list/merchant-list.component';
 import { MerchantOrdersComponent } from '../merchant-orders/merchant-orders.component';
 import { GuardService } from '../services/guard.service';
+import { AuthGuardService } from '../services/auth-guard.service';
 import { from } from 'rxjs';
 const routes: Routes = [
-  {path: '' , component: LoginComponent},
+  {path: '' , component: LoginComponent,},
   {path: 'home' , component: LoginComponent},
   {path: 'register' , component: RegisterComponent},
-  {path: 'login' , component: LoginComponent},
+  {path: 'login' , component: LoginComponent },
   {path: 'addfooditem' , component: AddfooditemsComponent, canActivate :[GuardService]},
   {path: 'showfooditems' , component: ShowfooditemsComponent, canActivate :[GuardService]},
   {path: 'merchantDashboard' , component: MerchantdashComponent, canActivate :[GuardService]},

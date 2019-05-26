@@ -9,9 +9,10 @@ export class CustomerdashComponent implements OnInit {
 
   constructor() { }
   public user;
+  public pageName;
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem("user"));
-
+    this.pageName = "Customer Dashboard";
   }
 
   addFood(){

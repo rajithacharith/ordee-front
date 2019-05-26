@@ -1,3 +1,4 @@
+<app-nav-bar [title]='this.pageName'></app-nav-bar>
 <div class="card-panel white col s8" id="items">
   <!-- <ul *ngFor = "let order of orderData" class="collection">
       <li class="collection-item avatar">
@@ -12,17 +13,21 @@
 
   <ul class="collapsible" materialize="collapsible"  *ngFor = "let order of orderData"  >
     <li>
-      <div class="collapsible-header" ><img src = {{order.foodItemBean.url}} alt="" style="height: 20%;width: 20%" class="circle">
-        <span class="title">{{order.foodItemBean.foodItemName}}</span>
+      <div class="collapsible-header" ><img src = {{order.foodItemBean.url}} alt="" style="height: 10%;width: 10%" class="circle">
+        <table>
+          <tr> <th><span class="title">{{order.foodItemBean.foodItemName}}</span></th>
+            <th><span>Customer Info:<br>
+              Name : {{order.customer.customerName}}<br> Telephone : {{order.customer.telephoneNo}}
+            <br> Status : {{order.status}}</span></th>
+            <th> <button class="btn btn-success orange darken-4" (click) = "startProcess(order)">Start Processing</button></th>
+            <th> <button class="btn btn-success  light-green accent-4" (click) = "finishProcess(order)">Done</button></th>
+            <th> <button class="btn btn-success red accent-4" (click) = "removeProcess(order)">Remove</button></th>
+            </tr>
+        </table>
+        
         <br>
-      <span>Customer Info:<br>
-        Name : {{order.customer.customerName}}<br> Telephone : {{order.customer.telephoneNo}}</span></div>
-        <select class="browser-default">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
+      </div>
+        
       <!-- <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div> -->
     </li>
     

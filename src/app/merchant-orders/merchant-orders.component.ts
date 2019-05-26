@@ -9,9 +9,11 @@ declare var $:any;
 })
 export class MerchantOrdersComponent implements OnInit {
   public orderData;
+  public pageName;
   constructor(private merchantService : MerchantService, private dataService: DataService) { }
 
   ngOnInit() {
+    this.pageName = "Order List";
     this.dataService.change();
     const data = JSON.parse(localStorage.getItem("user"));
     console.log(data);
@@ -32,6 +34,17 @@ export class MerchantOrdersComponent implements OnInit {
       $('.collapsible').collapsible();
     });
 
+  }
+
+  startProcess(order){
+    order.status = "Processing";
+    this.merchantService.setStatus(order.orderID,order.status);
+    
+  }
+
+  finishProcess(order){
+    order.status = "Finished";
+    this.merchantService.setStatus(order.orderID,order.status);
   }
 
 }

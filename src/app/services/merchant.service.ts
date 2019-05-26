@@ -47,7 +47,21 @@ export class MerchantService {
     )
   }
 
-  
+  public setStatus(orderId,status){
+    this.http.get("/api/merchant/setStatus?orderId="+orderId+"&status="+status).subscribe(
+      (res)=>{
+        console.log("Status changed");
+      }
+    )
+  }
+
+  public update(){
+    this.http.get("/api/merchant/updateReccomendation").subscribe(
+      res => {
+        console.log(res);
+      }
+    )
+  }
 
 
 }

@@ -1,0 +1,11 @@
+<div class="row card-panel white">
+  <div class="col s3">LOGO</div>
+  <div class="col s5"><h5>{{title}}</h5></div>  
+  <div *ngIf = "this.userType == 'customer'">
+    <div class="col s2" id="details"> Customer ID : {{this.user.customerId}} <br> Customer Name : {{this.user.customerName}}</div> 
+  </div>
+  <div *ngIf = "this.userType =='merchant'">
+  <div class="col s2" id="details"> Merchant ID : {{this.user.merchantID}} <br> merchant Name : {{this.user.merchantName}}</div>  
+</div>
+  <div class="col s2"> <button class="btn btn-success orange darken-4" (click) = "logOut()">Log Out</button></div>    
+</div>

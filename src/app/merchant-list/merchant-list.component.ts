@@ -10,9 +10,11 @@ import { Router } from '@angular/router';
 })
 export class MerchantListComponent implements OnInit {
   public datalist: any;
+  public pageName;
   constructor(private merchantService: MerchantService,private data: DataService,private router: Router) { }
 
   ngOnInit() {
+    this.pageName = "Merchants";
    this.merchantService.getMerchants();
    this.merchantService.dataString$.subscribe((res)=>{
      this.datalist = res;

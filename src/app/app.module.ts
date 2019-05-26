@@ -22,6 +22,7 @@ import { UploadFileServiceService } from './services/upload-file-service.service
 import { MerchantListComponent } from './merchant-list/merchant-list.component';
 import { MerchantOrdersComponent } from './merchant-orders/merchant-orders.component';
 import { MainComponent } from './main/main.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MainComponent } from './main/main.component';
     EditfooditemComponent,
     MerchantListComponent,
     MerchantOrdersComponent,
-    MainComponent
+    MainComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

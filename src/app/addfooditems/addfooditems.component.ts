@@ -16,6 +16,7 @@ export class AddfooditemsComponent implements OnInit {
   selectedFile: FileList;
   currentFileUpload: FileList;
   fileName: String;
+  public pageName;
   progress: { percentage: number } = { percentage: 0 }
   public foodItem;
   constructor(private uploadService: UploadFileServiceService,private foodService: FoodserviceService) {
@@ -23,6 +24,7 @@ export class AddfooditemsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.pageName = "Add new Food Item"
   }
 
   async onSubmit() {

@@ -36,7 +36,7 @@ export class FoodserviceService {
     headers.append('Access-Control-Allow-Credentials', 'true');
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
-    this.http.post('http://localhost:8080/api/merchant/addFoodItem', fooditem, headers).subscribe(res => {
+    this.http.post('/api/merchant/addFoodItem', fooditem, headers).subscribe(res => {
         console.log(res);
         this.router.navigate(['/merchantDashboard']);
     });
@@ -45,12 +45,12 @@ export class FoodserviceService {
   }
 
   getFoodItems(merchant) {
-    this.http.get("http://localhost:8080/api/customer/foodByMerchant?merchantID="+merchant.merchantID).subscribe((res)=>
+    this.http.get("/api/customer/foodByMerchant?merchantID="+merchant.merchantID).subscribe((res)=>
     {
       console.log(res);
       res.forEach(element => {
         let imgName = element.image;
-          element.url = "http://localhost:8080/api/file/"+element.image;
+          element.url = "/api/file/"+element.image;
           console.log(element.url);
       });
       this.saveFoodItems(res);
@@ -87,7 +87,7 @@ export class FoodserviceService {
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Credentials', 'true');
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
-    this.http.post('http://localhost:8080/api/customer/addOrder', orderList, headers).subscribe(
+    this.http.post('/api/customer/addOrder', orderList, headers).subscribe(
       (res) => {
         console.log(res);
         console.log("Order Success");
@@ -123,7 +123,7 @@ export class FoodserviceService {
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Credentials', 'true');
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
-    this.http.post('/customer/recommendation', foodList, headers).subscribe(
+    this.http.post('/api/customer/recommendation', foodList, headers).subscribe(
       (res) => {
         console.log(res);
         res.forEach(element => {
